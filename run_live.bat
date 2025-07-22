@@ -1,0 +1,3 @@
+@echo off
+echo [??] Starting Face Mask Detection Web App...
+python app.py

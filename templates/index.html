@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Face Mask Detection</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f6f8fa;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      padding: 2rem 1rem 1rem;
+    }
+
+    #stream-header {
+      font-size: 1.8rem;
+      color: #2d3748;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    #stream-header i {
+      font-size: 1.5rem;
+      color: #4299e1;
+    }
+
+    .description {
+      margin-bottom: 1.5rem;
+      color: #4a5568;
+      font-size: 1rem;
+    }
+
+    #start-btn {
+      background-color: #3182ce;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #start-btn:hover {
+      background-color: #2c5282;
+    }
+
+    #status-badge {
+      background-color: #38a169;
+      color: white;
+      padding: 8px 16px;
+      font-size: 1rem;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+
+    footer {
+      font-size: 0.9rem;
+      color: gray;
+      margin-top: 3rem;
+    }
+    .webcam-section {
+  margin: 2rem auto;
+  max-width: 800px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.webcam-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  background-color: #edf2f7;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.webcam-header .icon {
+  font-size: 1.8rem;
+  color: #4299e1;
+}
+
+.webcam-view {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+.webcam-section {
+  width: 95%;
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.webcam-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  background-color: #edf2f7;
+  color: #2d3748;
+  padding: 10px 16px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.webcam-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.webcam-view {
+  width: 100%;
+  max-height: 550px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.08);
+}
+@media screen and (max-width: 480px) {
+  .webcam-header {
+    font-size: 1.2rem;
+    flex-direction: column;
+  }
+}
+.webcam-wrapper {
+  position: relative;
+  background-color: #f0f4f8;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.08);
+}
+
+.webcam-view {
+  width: 100%;
+  border-radius: 8px;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div id="stream-header">
+      <i>🎥</i> Live Video Stream
+    </div>
+    <p class="description">Real-time classification of mask/no mask using your webcam.</p>
+    <button id="start-btn" onclick="startDetection()">▶️ Start Detection</button>
+    <div id="status-badge">🟢 Live Detection Active</div>
+  </header>
+
+  <!-- Streamed video will go here -->
+  <div class="webcam-section">
+  <div class="webcam-header">
+    <span class="icon">📸</span>
+    <span class="label">Live Webcam Feed</span>
+  </div>
+  <div class="webcam-container">
+  <div class="webcam-wrapper">
+  <img src="{{ url_for('video_feed') }}" alt="Waiting for Webcam Stream..." class="webcam-view" />
+</div>
+</div>
+
+  <footer>
+    Built by SRIJA DUTTA · AI & ML Internship Project · July 2025
+  </footer>
+
+  <script>
+    function startDetection() {
+      alert("Detection already running.");
+    }
+  </script>
+  <script>
+function speakAlert() {
+  const sayAlert = new SpeechSynthesisUtterance("No mask detected");
+  speechSynthesis.speak(sayAlert);
+}
+</script>
+</body>
+</html>

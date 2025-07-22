@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Audit Viewer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 30px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    .download-btn {
+      background-color: #0078D4;
+      color: white;
+      padding: 10px 16px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .download-btn:hover {
+      background-color: #005fa3;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .snapshot {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 10px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .snapshot:hover {
+      transform: scale(1.02);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    .meta strong {
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <h2>📸 Snapshot Audit Viewer</h2>
+    <a class="download-btn" href="/download_log">⬇️ Download Log CSV</a>
+  </div>
+
+  <div class="grid">
+    {% for entry in entries %}
+      <div class="snapshot">
+        <img src="{{ url_for('serve_image', filename=entry.filename) }}" alt="{{ entry.filename }}">
+        <div class="meta">
+          <strong>Label:</strong> {{ entry.label }}<br>
+          <strong>Confidence:</strong> {{ entry.confidence }}<br>
+          <strong>Timestamp:</strong> {{ entry.timestamp }}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
