@@ -1,3 +1,6 @@
+![Python](https://img.shields.io/badge/Python-3.11-blue.svg)
+![Flask](https://img.shields.io/badge/Framework-Flask-green.svg)
+![Status](https://img.shields.io/badge/Project-Complete-brightgreen.svg)
 # 🧠 Face Mask Detection using CNN and Flask
 
 This project detects whether individuals are wearing face masks in real-time using a Convolutional Neural Network (CNN) trained with TensorFlow/Keras, integrated with OpenCV and Flask for UI interaction.
@@ -54,7 +57,8 @@ Audit Dashboard
 ⚠️ Large File Downloads
 Due to GitHub limits, some files are hosted externally:
 | File Name | Purpose | Download | 
-| mobilenet_model.h5 | Used by app.py and mask_detector.py | Download (https://drive.google.com/drive/u/0/folders/1VuB7OBH_8DB2eJb_OkDeDoLghakFFahj)| 
+| mobilenet_model.h5 | Used by app.py and mask_detector.py | 
+Download (https://drive.google.com/drive/u/0/folders/1VuB7OBH_8DB2eJb_OkDeDoLghakFFahj)| 
 
 📥 Place these inside: model_training/
 
