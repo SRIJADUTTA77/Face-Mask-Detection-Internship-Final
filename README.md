@@ -54,7 +54,7 @@ Audit Dashboard
 ⚠️ Large File Downloads
 Due to GitHub limits, some files are hosted externally:
 | File Name | Purpose | Download | 
-| mobilenet_model.h5 | Used by app.py and mask_detector.py | Download "https://drive.google.com/drive/u/0/folders/1VuB7OBH_8DB2eJb_OkDeDoLghakFFahj"| 
+| mobilenet_model.h5 | Used by app.py and mask_detector.py | Download (https://drive.google.com/drive/u/0/folders/1VuB7OBH_8DB2eJb_OkDeDoLghakFFahj)| 
 
 📥 Place these inside: model_training/
 
